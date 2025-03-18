@@ -2,6 +2,65 @@
 
 h1 {
     color: #369;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 3rem;
 }
+
+
+
+
+.bg-custom {
+    background-color: #1e2363;
+}
+
+.text-custom {
+    color:#c3c0d6;
+}
+
+.footer-app {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #101a4d;
+    color: #c3c0d6;
+    padding: 10px;
+}
+
+.footer-btn {
+    background-color: #c3c0d6; /* Same as other buttons */
+    color: #c3c0d6;
+    padding: 15px 15px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Removes underline */
+    display: inline-block;
+}
+
+.footer-btn:hover {
+    background-color: #a0a0c8; /* Slightly darker color on hover */
+}
+
+.header-app {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #101a4d;
+    color: white;
+    padding: 10px;
+}
+
+
+
