@@ -14,7 +14,6 @@ CREATE TABLE SleepRecords (
                               sleep_start TIMESTAMP NOT NULL,
                               sleep_end TIMESTAMP NOT NULL,
                               sleep_duration NUMERIC(5,2) GENERATED ALWAYS AS (EXTRACT(EPOCH FROM (sleep_end - sleep_start)) / 3600.0) STORED,
-                              notes TEXT,
                               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                               FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
