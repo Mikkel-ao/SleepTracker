@@ -1,6 +1,3 @@
-CREATE DATABASE SleepTrackerDB;
-USE SleepTrackerDB;
-
 -- Users table
 CREATE TABLE Users (
                        user_id INT AUTO_INCREMENT PRIMARY KEY,
