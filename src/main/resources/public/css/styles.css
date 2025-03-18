@@ -1,12 +1,25 @@
 /* Stylesheet for the application */
 
-h1 {
-    color: #369;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 3rem;
+h1, h2, h3, h4, h5, h6, p {
+    color: #c3c3c3;
 }
 
+/* For editing purposes, delete when done */
+header {
+    border: solid red 1px;
+    padding: 5px;
+}
 
+main {
+    border: solid white 1px;
+    padding: 5px;
+}
+
+footer {
+    border: solid orange 1px;
+    padding: 5px;
+
+}
 
 
 .bg-custom {
@@ -70,10 +83,6 @@ body {
 
 /* Stylesheet for the application */
 
-h1, h2, h3, h4, h5, h6, p {
-    color: #c3c3c3;
-    font-size: 1rem;
-}
 .logo {
     display: block;
     margin: 0 auto;
@@ -91,20 +100,6 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: center;
     text-align: center;
     background-color: #323a9e;
-}
-
-header {
-    border: solid red 1px;
-    padding: 5px;
-}
-main {
-    border: solid white 1px;
-    padding: 5px;
-}
-footer {
-    border: solid orange 1px;
-    padding: 5px;
-
 }
 
 /**** login styles *****/
