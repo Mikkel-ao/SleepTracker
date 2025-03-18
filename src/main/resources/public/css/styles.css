@@ -1,7 +1,74 @@
+/* *** body styles ***/
+body {
+    background-color: #323a9e;
+    font-family: "Times New Roman", Times, serif;
+}
+
 /* Stylesheet for the application */
 
-h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3rem;
+h1, h2, h3, h4, h5, h6, p {
+    color: #c3c3c3;
+    font-size: 1rem;
+}
+.logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 150px;
+}
+
+/* container styles */
+
+.page-container {
+    font-family: "Times New Roman", Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #323a9e;
+}
+
+header {
+    border: solid red 1px;
+    padding: 5px;
+}
+main {
+    border: solid white 1px;
+    padding: 5px;
+}
+footer {
+    border: solid orange 1px;
+    padding: 5px;
+
+}
+
+/**** login styles *****/
+.generic-form{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.generic-form [type=text], .generic-form [type=password] {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: #c3c0d6;
+    color: #c3c0d6;
+}
+
+.generic-form button {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #535ce1;
+    color: white;
+    border: #c3c0d6;
+}
+
+/**** create and logout styles *****/
+.logout-create {
+    color: white;
+
 }
