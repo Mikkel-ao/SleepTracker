@@ -39,7 +39,7 @@ public class SleepController {
         } catch (DatabaseException e) {
             throw new RuntimeException(e);
         }
-        ctx.render("/team12/team12_tracker.html");
+        ctx.render("/tracker.html");
     }
 
     private static void fetchSleepData(Context ctx, ConnectionPool connectionPool) {

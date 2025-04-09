@@ -4,7 +4,7 @@
     <title>Sleeptracker</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../public/team12/css/team12_styles.css" th:href="@{/team12/css/team12_styles.css}" rel="stylesheet"/>
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
 </head>
 <div class="page-container">
 
@@ -24,7 +24,7 @@
 
             <div id="result"></div>
 
-            <button type="submit" formaction="/team12/calculate">Register your sleep</button>
+            <button type="submit" formaction="/calculate">Register your sleep</button>
 
 
         </div>
@@ -77,8 +77,8 @@
 
 
     <footer class="footer-app">
-        <a th:if="${session.currentUser != null}" href="../../../../../../SleepTracker/src/main/resources/templates/team12_index.html" th:href="@{/team12/logout}" class="text-silver"> Log out </a>
-        <a th:if="${session.currentUser != null}" href="team12_dashboard.html" th:href="@{/team12/dashboard}" class="text-silver"> Dashboard </a>
+        <a th:if="${session.currentUser != null}" href="../../../../../SleepTracker/src/main/resources/templates/login.html" th:href="@{/logout}" class="text-silver"> Log out </a>
+        <a th:if="${session.currentUser != null}" href="dashboard.html" th:href="@{/dashboard}" class="text-silver"> Dashboard </a>
     </footer>
 </div>
 </body>

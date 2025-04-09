@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<title>FourThingsPlus</title>
+<title>Create User</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="../../public/team12/css/team12_styles.css" th:href="@{/team12/css/team12_styles.css}" rel="stylesheet"/>
+<link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
 </head>
 
 <body>
 <div class="page-container">
     <header>
-        <a href="../../../../../../SleepTracker/src/main/resources/templates/team12_index.html" th:href="@{/team12}">
-            <img class="logo" src="../../public/team12/images/SleepTrackerLogo.png"
-                 th:src="@{/team12/images/SleepTrackerLogo.png}" alt="Sleep Tracker Logo">        </a>
+        <a href="../../../../../SleepTracker/src/main/resources/templates/login.html" th:href="@{/}">
+            <img class="logo" src="../public/images/SleepTracker_logo.png"
+                 th:src="@{/images/SleepTracker_logo.png}" alt="Sleep Tracker Logo">        </a>
     </header>
 
 
@@ -22,13 +22,13 @@
         <input type="password" name="password1" placeholder=" Enter password"/>
         <input type="password" name="password2" placeholder=" Enter password again"/>
 
-        <button type="submit" formaction="/team12/createuser">Create profile</button>
+        <button type="submit" formaction="/createuser">Create profile</button>
 
         <div><p th:text="${message}"></p></div>
     </form>
 
     <div >
-        <a href="../../../../../../SleepTracker/src/main/resources/templates/team12_index.html" th:href="@{/team12}" class="text-silver"> Back to login page </a>
+        <a href="../../../../../SleepTracker/src/main/resources/templates/login.html" th:href="@{/}" class="text-silver"> Back to login page </a>
     </div>
 
 </div>
