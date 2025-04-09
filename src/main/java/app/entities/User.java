@@ -1,34 +1,35 @@
 package app.entities;
 
 import java.security.Timestamp;
+import java.time.LocalDateTime;
 
 public class User {
-    private int user_id;
-    private String username;
+    private int userId;
+    private static String username;
     private String password;
-    private Timestamp timestamp;
+    private LocalDateTime createdAt;
 
-    public User(int user_id, String username, String password, Timestamp timestamp) {
-        this.user_id = user_id;
+    public User(int userId, String username, String password, LocalDateTime createdAt) {
+        this.userId = userId;
         this.username = username;
         this.password = password;
-        this.timestamp = timestamp;
+        this.createdAt = createdAt;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public static void setUsername(String username) {
+        User.username = username;
     }
 
     public String getPassword() {
@@ -39,21 +40,11 @@ public class User {
         this.password = password;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "user_id=" + user_id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", timestamp=" + timestamp +
-                '}';
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

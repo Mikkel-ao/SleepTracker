@@ -14,10 +14,6 @@ public class UserController {
         app.get("/team12/logout", UserController::logout);
         app.get("/team12/createuser", ctx -> ctx.render("/team12/team12_createuser.html"));
         app.post("/team12/createuser", ctx -> createUser(ctx, connectionPool));
-        app.post("/team12/calculate", ctx -> sleep(ctx, connectionPool));
-        app.get("/team12/dashboard", ctx -> ctx.render("/team12/team12_dashboard.html"));
-        app.get("/team12/sleep-data", ctx -> fetchSleepData(ctx, connectionPool));
-
     }
 
 

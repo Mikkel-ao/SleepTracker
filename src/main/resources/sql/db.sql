@@ -17,13 +17,3 @@ CREATE TABLE SleepRecords (
                               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                               FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
-
--- Sleep Analytics Table
-CREATE TABLE SleepAnalytics (
-                                analytics_id SERIAL PRIMARY KEY,
-                                user_id INT NOT NULL,
-                                sleep_date DATE NOT NULL,
-                                total_sleep NUMERIC(5,2) NOT NULL,
-                                last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                                FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
-);

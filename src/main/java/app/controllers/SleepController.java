@@ -1,8 +1,10 @@
 package app.controllers;
 
+import app.entities.SleepRecord;
 import app.entities.User;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
+import app.persistence.SleepMapper;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
@@ -12,10 +14,12 @@ import java.util.Map;
 
 public class SleepController {
 
-    private static void addRoutes(Javalin app, ConnectionPool pool) {}
-
-
-
+    public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
+        app.post("/team12/calculate", ctx -> sleep(ctx, connectionPool));
+        app.get("/team12/dashboard", ctx -> ctx.render("/team12/team12_dashboard.html"));
+        app.get("/team12/sleep-data", ctx -> fetchSleepData(ctx, connectionPool));
+    }
+    
     private static void sleep(Context ctx, ConnectionPool connectionPool) {
         User currentUser = ctx.sessionAttribute("currentUser");
         if (currentUser == null) {
@@ -30,8 +34,6 @@ public class SleepController {
 
             SleepMapper.saveSleepData(currentUser.getUserId(), sleepStart, sleepEnd, connectionPool);
             ctx.attribute("message", "Sleep data recorded.");
-        } catch (DatabaseException e) {
-            ctx.attribute("message", "Failed to record sleep data.");
         } catch (IllegalArgumentException e) {
             ctx.attribute("message", "Invalid date format.");
         }
@@ -46,9 +48,9 @@ public class SleepController {
         }
 
         try {
-            List<SleepRecords> sleepRecords = SleepMapper.getSleepDataByUserId(currentUser.getUserId(), connectionPool);
+            List<SleepRecord> sleepRecords = SleepMapper.getSleepDataByUserId(currentUser.getUserId(), connectionPool);
             ctx.json(sleepRecords);
-        } catch (Team12DatabaseException e) {
+        } catch (DatabaseException e) {
             ctx.status(500).json(Map.of("error", "Failed to fetch sleep data"));
         }
     }
