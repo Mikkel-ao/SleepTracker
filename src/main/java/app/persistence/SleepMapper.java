@@ -10,8 +10,8 @@ import java.util.List;
 public class SleepMapper {
 
     // Saves sleep data (user ID, start time, end time) to the database
-    public static void saveSleepData(int userId, Timestamp sleepStart, Timestamp sleepEnd, ConnectionPool connectionPool) throws Team12DatabaseException {
-        String sql = "INSERT INTO team12_sleep_records (user_id, sleep_start, sleep_end) VALUES (?, ?, ?)";
+    public static void saveSleepData(int userId, Timestamp sleepStart, Timestamp sleepEnd, ConnectionPool connectionPool) throws DatabaseException {
+        String sql = "INSERT INTO sleep_records (user_id, sleep_start, sleep_end) VALUES (?, ?, ?)";
 
         try (
                 Connection connection = connectionPool.getConnection();
@@ -36,7 +36,7 @@ public class SleepMapper {
     }
 
     public static List<SleepRecord> getSleepDataByUserId(int userId, ConnectionPool connectionPool) throws DatabaseException {
-        String sql = "SELECT record_id, user_id, sleep_start, sleep_end, sleep_duration, created_at FROM team12_sleep_records WHERE user_id = ?";
+        String sql = "SELECT record_id, user_id, sleep_start, sleep_end, sleep_duration, created_at FROM sleep_records WHERE user_id = ?";
         List<SleepRecord> sleepRecords = new ArrayList<>();
 
         try (Connection connection = connectionPool.getConnection();

@@ -1,6 +1,8 @@
 package app.controllers;
 
+import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
+import app.persistence.UserMapper;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
@@ -29,10 +31,10 @@ public class UserController {
         }
 
         try {
-            Team12UserMapper.createUser(username, password1, connectionPool);
+            UserMapper.createUser(username, password1, connectionPool);
             ctx.attribute("message", "User created successfully. Please log in.");
             ctx.render("/team12/team12_index.html");
-        } catch (Team12DatabaseException e) {
+        } catch (DatabaseException e) {
             ctx.attribute("message", "User already exists. Try again or log in.");
             ctx.render("/team12/team12_createuser.html");
         }

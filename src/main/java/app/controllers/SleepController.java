@@ -15,16 +15,16 @@ import java.util.Map;
 public class SleepController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
-        app.post("/team12/calculate", ctx -> sleep(ctx, connectionPool));
-        app.get("/team12/dashboard", ctx -> ctx.render("/team12/team12_dashboard.html"));
-        app.get("/team12/sleep-data", ctx -> fetchSleepData(ctx, connectionPool));
+        app.post("/calculate", ctx -> sleep(ctx, connectionPool));
+        app.get("/dashboard", ctx -> ctx.render("/dashboard.html"));
+        app.get("/sleep-data", ctx -> fetchSleepData(ctx, connectionPool));
     }
-    
+
     private static void sleep(Context ctx, ConnectionPool connectionPool) {
         User currentUser = ctx.sessionAttribute("currentUser");
         if (currentUser == null) {
             ctx.attribute("message", "User not logged in.");
-            ctx.render("/team12/team12_tracker.html");
+            ctx.render("/tracker.html");
             return;
         }
 
@@ -36,6 +36,8 @@ public class SleepController {
             ctx.attribute("message", "Sleep data recorded.");
         } catch (IllegalArgumentException e) {
             ctx.attribute("message", "Invalid date format.");
+        } catch (DatabaseException e) {
+            throw new RuntimeException(e);
         }
         ctx.render("/team12/team12_tracker.html");
     }
