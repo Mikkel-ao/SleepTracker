@@ -1,16 +1,16 @@
--- Insert example users
-INSERT INTO Users (username, password_hash)
+INSERT INTO users (username, password_hash)
 VALUES
-('AndersJensen', 'hashed_password_1'),
-('SofieNielsen', 'hashed_password_2'),
-('FrederikLarsen', 'hashed_password_3');
+    ('john_doe', 'hashed_password_123'),
+    ('jane_smith', 'hashed_password_456'),
+    ('alex_lee', 'hashed_password_789');
 
--- Insert example sleep records
-INSERT INTO SleepRecords (user_id, sleep_date, sleep_start, sleep_end)
+
+INSERT INTO sleep_records (user_id, sleep_start, sleep_end)
 VALUES
-(1, '2025-03-15', '2025-03-14 23:00:00', '2025-03-15 07:00:00'),
-(1, '2025-03-16', '2025-03-15 23:30:00', '2025-03-16 06:30:00'),
-(2, '2025-03-15', '2025-03-14 22:45:00', '2025-03-15 06:15:00'),
-(2, '2025-03-16', '2025-03-15 23:15:00', '2025-03-16 07:45:00'),
-(3, '2025-03-15', '2025-03-14 23:30:00', '2025-03-15 05:45:00'),
-(3, '2025-03-16', '2025-03-15 22:00:00', '2025-03-16 06:00:00');
+    (1, '2025-03-18 22:00:00', '2025-03-19 06:00:00'),
+    (2, '2025-03-18 23:00:00', '2025-03-19 07:00:00'),
+    (3, '2025-03-18 21:30:00', '2025-03-19 05:30:00'),
+    (1, '2025-03-19 22:00:00', '2025-03-20 06:30:00'),
+    (2, '2025-03-19 23:30:00', '2025-03-20 07:30:00');
+
+
