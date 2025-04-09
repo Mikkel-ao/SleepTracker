@@ -1,4 +1,4 @@
-package app.entitites;
+package app.entities;
 
 import java.security.Timestamp;
 

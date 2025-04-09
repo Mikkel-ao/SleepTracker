@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<title>Newsletters</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../public/team12/css/team12_styles.css" th:href="@{/team12/css/team12_styles.css}" rel="stylesheet"/>
+
+</head>
+
+<body>
+<form>
+    <div class="page-container">
+        <header>
+            <a href="team12_index.html" th:href="@{/}"> </a>
+            <img class="logo" src="../../public/team12/images/SleepTrackerLogo.png"
+                 th:src="@{/team12/images/SleepTrackerLogo.png}" alt="Sleep Tracker Logo">
+            <h1>Welcome to your dashboard, <span th:text="${session.currentUser.username}"></span></h1>
+            <h2> Det var meningen vi skulle have graf med data fra databasen</h2>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <img src="../../public/team12/images/sleepGraphEks.png"
+                     th:src="@{/team12/images/sleepGraphEks.png}" alt="Sleep Graph Eks">
+
+            </div>
+        </main>
+
+        <footer class="footer-app">
+            <a th:if="${session.currentUser != null}" href="team12_index.html" th:href="@{/logout}" class="text-silver"> Log out </a>
+            <a th:if="${session.currentUser != null}" href="team12_tracker.html" th:href="@{/tracker}" class="text-silver"> Track some sleep </a>
+        </footer>
+
+    </div>
+</form>
+</body>
+</html>
